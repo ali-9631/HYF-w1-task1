@@ -10,9 +10,9 @@ while (true) {
 
     year = Number(year);
 
-    while (Number.isNaN(year) || year < 1 || year > 9999) {
+    if (Number.isNaN(year) || year < 1 || year > 9999) {
         console.log("Please enter a valid year.");
-        year = Number(prompt("Enter a year (* to end): "));
+        continue;
     }
 
     if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
