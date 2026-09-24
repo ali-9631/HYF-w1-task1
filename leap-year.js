@@ -2,7 +2,8 @@ import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
 while (true) {
-    let year = Number(prompt("Enter a year: "));
+    let year = prompt("Enter a year: ");
+    year = Number(year);
 
     while (Number.isNaN(year) || year < 1 || year > 9999) {
         console.log("Please enter a valid year.");
@@ -16,8 +17,3 @@ while (true) {
     }
 }
 
-// Write your code here
-// Guidance:
-// Step 1: prompt the user to enter a year
-// Step 2: convert the user input to a number so we can perform calculations
-// Step 3: Implement the logic
