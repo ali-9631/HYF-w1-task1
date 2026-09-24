@@ -2,12 +2,17 @@ import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
 while (true) {
-    let year = prompt("Enter a year: ");
+    let year = prompt("Enter a year (* to end): ");
+
+    if (year === "*") {
+        break;
+    }
+
     year = Number(year);
 
     while (Number.isNaN(year) || year < 1 || year > 9999) {
         console.log("Please enter a valid year.");
-        year = Number(prompt("Enter a year: "));
+        year = Number(prompt("Enter a year (* to end): "));
     }
 
     if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
@@ -16,4 +21,3 @@ while (true) {
         console.log(year + " is not a leap year.");
     }
 }
-
