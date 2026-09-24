@@ -3,7 +3,7 @@ const prompt = promptSync();
 
 while (true) {
     let year = prompt("Enter a year: ");
-    let year = Number(year);
+    year = Number(year);
 
     while (Number.isNaN(year) || year < 1 || year > 9999) {
         console.log("Please enter a valid year.");
